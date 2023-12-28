@@ -21,4 +21,5 @@ public class ReservationMapper {
         BeanUtils.copyProperties(reservationRequestDTO, reservation);
         return reservation;
     }
+
 }
