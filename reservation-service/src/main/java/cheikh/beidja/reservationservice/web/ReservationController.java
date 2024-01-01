@@ -31,40 +31,35 @@ public class ReservationController {
     }
 
     @GetMapping("/reservations")
-    public List<ReservationResponseDTO> allReservations() {
-
+    public List<ReservationResponseDTO> allReservations()
+    {
         return reservationService.getAllReservations();
     }
-//    @GetMapping("/reservations/{id}")
-//    public ReservationResponseDTO getReservationById(@PathVariable Long id) {
-//        return reservationService.getReservationById(id);
-//    }
+    @GetMapping("/reservations/{id}")
+    public ReservationResponseDTO getReservationById(@PathVariable Long id) {
+        return reservationService.getReservationById(id);
+    }
 
-    @PostMapping("/reservations")
+    @PostMapping("/reservations/create")
     public ReservationResponseDTO createReservation(@RequestBody ReservationRequestDTO reservationRequestDTO) {
         return reservationService.addReservation(reservationRequestDTO);
     }
 
-    @PutMapping("/reservations/{id}")
+    @PutMapping("/reservations/update/{id}")
     public ReservationResponseDTO updateReservation(@PathVariable Long id, @RequestBody ReservationRequestDTO reservationRequestDTO) {
         return reservationService.updateReservation(id, reservationRequestDTO);
     }
 
 
-    @DeleteMapping("/reservations/{id}")
+    @DeleteMapping("/reservations/delete/{id}")
     public void deleteReservation(@PathVariable Long id) {
+
         reservationRepository.deleteById(id);
     }
 
-    @GetMapping("/fullReservation/{id}")
-    public ReservationResponseDTO getReservationById(@PathVariable Long id) {
-        Reservation reservation = reservationRepository.findById(id).get();
-        ResourceResponseDTO resourceResponseDTO = resourceRestClientService.resourceById(reservation.getResourceId());
-        Resource resource=new Resource();
-        resource.setName(resourceResponseDTO.getName());
-        resource.setTypeResource(resourceResponseDTO.getTypeResource());
-        //reservation.setResource(resourceResponseDTO);
+   @GetMapping("/reservations/person/{id}")
+    public List<Reservation>findByPersonId(@PathVariable Long id){
+      return reservationService.findByPersonId(id);
 
-        return null;
     }
 }

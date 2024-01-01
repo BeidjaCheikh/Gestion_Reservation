@@ -1,0 +1,29 @@
+<!-- resource-create.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header">
+          Create Resource
+        </div>
+        <div class="card-body">
+          <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="typeResource" class="form-label">Type</label>
+              <select class="form-select form-select-lg mb-3" ngModel name="typeResource" id="typeResource" required>
+                <option value="" disabled selected>Select a type</option>
+                <option value="MATERIEL_INFO">MATERIEL_INFO</option>
+                <option value="MATERIEL_AUDIO_VISUEL">MATERIEL_AUDIO_VISUEL</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

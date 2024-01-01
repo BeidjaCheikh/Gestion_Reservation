@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header">
+          Update Resource
+        </div>
+        <div class="card-body">
+          <form #editForm='ngForm' (ngSubmit)="onSubmit(editForm)">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" aria-describedby="name" ngModel="{{resourceEdit?.name}}" name="name">
+            </div>
+            <div class="mb-3">
+              <label for="typeResource" class="form-label">Type</label>
+              <select class="form-select form-select-lg mb-3" ngModel name="typeResource" id="typeResource" required>
+                <option value="" disabled selected>{{resourceEdit?.typeResource}}</option>
+                <option value="MATERIEL_INFO">MATERIEL_INFO</option>
+                <option value="MATERIEL_AUDIO_VISUEL">MATERIEL_AUDIO_VISUEL</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

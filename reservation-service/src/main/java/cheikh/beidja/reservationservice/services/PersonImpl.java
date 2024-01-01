@@ -2,7 +2,9 @@ package cheikh.beidja.reservationservice.services;
 
 import cheikh.beidja.reservationservice.dto.PersonRequestDTO;
 import cheikh.beidja.reservationservice.dto.PersonResponseDTO;
+import cheikh.beidja.reservationservice.dto.ReservationResponseDTO;
 import cheikh.beidja.reservationservice.entities.Person;
+import cheikh.beidja.reservationservice.entities.Reservation;
 import cheikh.beidja.reservationservice.mapper.PersonMapper;
 import cheikh.beidja.reservationservice.repository.PersonRepository;
 import org.springframework.stereotype.Service;
@@ -37,6 +39,7 @@ public class PersonImpl implements PersonService{
         return personResponseDTO;
     }
 
+
     @Override
     public List<PersonResponseDTO> getAllPerson() {
         List<Person> allPerson = personRepository.findAll();
@@ -56,4 +59,12 @@ public class PersonImpl implements PersonService{
         PersonResponseDTO personResponseDTO = personMapper.fromPerson(updatedPerson);
         return personResponseDTO;
     }
+
+    @Override
+    public List<ReservationResponseDTO> resrvationByPersonId(Long id)
+    {
+        return null;
+    }
+
+
 }

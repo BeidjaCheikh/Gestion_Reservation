@@ -1,0 +1,29 @@
+<!-- resource-create.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header">
+          Add Resource
+        </div>
+        <div class="card-body">
+          <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Name</label>
+              <input type="text" ngModel name="nom" class="form-control" id="nom" placeholder="nom" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Type</label>
+              <input type="text" ngModel name="email" class="form-control" id="email" placeholder="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="function" class="form-label">Type</label>
+              <input type="text" ngModel name="function" class="form-control" id="function" placeholder="function" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

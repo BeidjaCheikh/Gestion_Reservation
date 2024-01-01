@@ -11,5 +11,8 @@ import java.util.Date;
 public class ReservationRequestDTO {
     private String nom;
     private String context;
+    private Date date;
     private int duration;
+    private Long resourceId;
+    private Long personId;
 }
