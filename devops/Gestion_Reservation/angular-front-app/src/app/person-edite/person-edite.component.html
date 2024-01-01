@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header">
+          Update Person
+        </div>
+        <div class="card-body">
+          <form #editForm='ngForm' (ngSubmit)="onSubmit(editForm)">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Name</label>
+              <input type="text" class="form-control" id="nom" aria-describedby="nom" ngModel="{{personEdit?.nom}}" name="nom">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Type</label>
+              <input type="text" class="form-control" id="email" aria-describedby="email" ngModel="{{personEdit?.email}}" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="function" class="form-label">Type</label>
+              <input type="text" class="form-control" id="function" aria-describedby="function" ngModel="{{personEdit?.function}}" name="function">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
